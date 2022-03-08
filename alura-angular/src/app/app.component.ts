@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TransferenciaService} from "./services/transferencia.service";
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'alura-angular';
-  transferencias: any[] = [];
+  title = 'Bytebank';
 
-  transferir($event) {
-    console.log($event)
-    const transferencia = {...$event, data: new Date()};
-    this.transferencias.push(transferencia);
-  }
+  constructor(private service: TransferenciaService) {}
 }
